@@ -11,9 +11,13 @@ spec:
     targetRevision: 2.1.2
     helm:
       releaseName: popeye
+      valueFiles:
+        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: popeye
   syncPolicy:
     automated:
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Automatically creates namespace if it doesn't exist
