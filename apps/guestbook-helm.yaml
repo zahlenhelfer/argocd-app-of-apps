@@ -16,3 +16,9 @@ spec:
     targetRevision: HEAD
     plugin:
       name: kustomized-helm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Automatically creates namespace if it doesn't exist
