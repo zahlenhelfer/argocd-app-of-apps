@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     chart: popeye
-    repoURL: https://charts.christianhuth.de/popeye
+    repoURL: https://charts.christianhuth.de
     targetRevision: 2.1.2
     helm:
       releaseName: popeye
