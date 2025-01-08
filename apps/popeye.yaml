@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: popeye
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: popeye
+    repoURL: https://charts.christianhuth.de/popeye
+    targetRevision: 2.1.2
+    helm:
+      releaseName: popeye
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: popeye
