@@ -21,3 +21,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
+      - Replace=true
