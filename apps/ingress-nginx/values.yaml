@@ -1,3 +1,4 @@
 controller:
   ingressClassResource:
+    enabled: true
     default: true
