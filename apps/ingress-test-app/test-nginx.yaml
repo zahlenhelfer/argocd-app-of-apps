@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-test
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/zahlenhelfer/k8s-argo-test.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-test
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Automatically creates namespace if it doesn't exist
