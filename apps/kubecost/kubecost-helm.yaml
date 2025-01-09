@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opencost
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: opencost
+    repoURL: https://opencost.github.io/opencost-helm-chart
+    targetRevision: 1.43.0
+    helm:
+      releaseName: opencost
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: opencost
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Automatically creates namespace if it doesn't exist
