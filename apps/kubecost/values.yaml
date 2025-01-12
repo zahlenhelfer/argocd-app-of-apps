@@ -5,3 +5,5 @@ opencost:
       ingressClassName: 'nginx'
       hosts:
         - host: 'opencost.fritz.box'
+          paths:
+            - /
