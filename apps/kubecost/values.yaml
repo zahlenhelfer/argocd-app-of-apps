@@ -1,1 +1,3 @@
 opencost.ui.ingress.enabled: true
+opencost.ui.ingress.ingressClassName: "nginx"
+opencost.ui.ingress.hosts: "opencost.fritz.box"
