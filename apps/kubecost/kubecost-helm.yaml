@@ -5,17 +5,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: opencost
-    repoURL: https://opencost.github.io/opencost-helm-chart
-    targetRevision: 1.43.0
-    helm:
-      releaseName: opencost
-      valueFiles:
-        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: opencost
+  sources:
+    - chart: opencost
+      repoURL: https://opencost.github.io/opencost-helm-chart
+      targetRevision: 1.43.0
+      helm:
+        releaseName: opencost
+        valueFiles:
+          - $values/apps/kubecost/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   syncPolicy:
     automated:
       selfHeal: true
