@@ -10,7 +10,7 @@ spec:
   source:
     chart: metallb
     repoURL: https://metallb.github.io/metallb
-    targetRevision: 0.14.9
+    targetRevision: 0.14.8
     helm:
       releaseName: metallb
       valueFiles:
@@ -24,4 +24,3 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
-      - Replace=true
