@@ -4,6 +4,6 @@ opencost:
       enabled: true
       ingressClassName: 'nginx'
       hosts:
-        - host: 'opencost.zhapps.de'
+        - host: 'opencost.zhapps.local'
           paths:
             - /

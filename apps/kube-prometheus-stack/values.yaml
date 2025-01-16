@@ -411,7 +411,7 @@ alertmanager:
     ## Hosts must be provided if Ingress is enabled.
     ##
     hosts:
-      - alertmanager.zhapps.de
+      - alertmanager.zhapps.local
 
     ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
     ##
@@ -1058,7 +1058,7 @@ grafana:
     ## Must be provided if Ingress is enable.
     ##
     hosts:
-      - 'grafana.zhapps.de'
+      - 'grafana.zhapps.local'
 
     ## Path for grafana ingress
     path: /
@@ -3396,7 +3396,7 @@ prometheus:
     ## Must be provided if Ingress is enabled.
     ##
     hosts:
-      - prometheus.zhapps.de
+      - prometheus.zhapps.local
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##

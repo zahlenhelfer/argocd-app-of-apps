@@ -715,7 +715,7 @@ vmalert:
     pathType: Prefix
 
     hosts:
-      - vmalert.zhapps.de
+      - vmalert.zhapps.local
     # -- Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
     extraPaths: []
     # - path: /*
@@ -889,7 +889,7 @@ grafana:
     pathType: Prefix
 
     hosts:
-      - grafana.zhapps.de
+      - grafana.zhapps.local
     # -- Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
     extraPaths: []
     # - path: /*
