@@ -9,7 +9,6 @@ spec:
   project: default
   source:
     repoURL: https://github.com/zahlenhelfer/k8s-argo-test.git
-    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-test
