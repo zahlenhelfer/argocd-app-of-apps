@@ -411,7 +411,7 @@ alertmanager:
     ## Hosts must be provided if Ingress is enabled.
     ##
     hosts:
-      - alertmanager.fritz.box
+      - alertmanager.zhapps.de
 
     ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
     ##
@@ -1058,7 +1058,7 @@ grafana:
     ## Must be provided if Ingress is enable.
     ##
     hosts:
-      - grafana.fritz.box
+      - 'grafana.zhapps.de'
 
     ## Path for grafana ingress
     path: /
@@ -2365,20 +2365,20 @@ prometheusOperator:
     ## On chart upgrades (or if the secret exists) the cert will not be re-generated. You can use this to provide your own
     ## certs ahead of time if you wish.
     ##
-    annotations: {}
-    #   argocd.argoproj.io/hook: PreSync
-    #   argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    annotations:
+      argocd.argoproj.io/hook: PreSync
+      argocd.argoproj.io/hook-delete-policy: HookSucceeded
 
     namespaceSelector: {}
     objectSelector: {}
 
     mutatingWebhookConfiguration:
-      annotations: {}
-      #   argocd.argoproj.io/hook: PreSync
+      annotations:
+        argocd.argoproj.io/hook: PreSync
 
     validatingWebhookConfiguration:
-      annotations: {}
-      #   argocd.argoproj.io/hook: PreSync
+      annotations:
+        argocd.argoproj.io/hook: PreSync
 
     deployment:
       enabled: false
@@ -3396,7 +3396,7 @@ prometheus:
     ## Must be provided if Ingress is enabled.
     ##
     hosts:
-      - prometheus.fritz.box
+      - prometheus.zhapps.de
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
     ##

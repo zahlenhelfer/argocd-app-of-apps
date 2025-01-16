@@ -25,3 +25,19 @@ spec:
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
       - Replace=true
+      # https://argo-cd.readthedocs.io/en/stable/user-guide/sync-options/#respect-ignore-difference-configs
+      # argocd must also ignore difference during apply stage
+      # otherwise it ll silently override changes and cause a problem
+      - RespectIgnoreDifferences=true
+  ignoreDifferences:
+    - group: ''
+      kind: Secret
+      name: <fullname>-validation
+      namespace: <k8s-stack-namespace>
+      jsonPointers:
+        - /data
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      name: <fullname>-admission
+      jqPathExpressions:
+        - '.webhooks[]?.clientConfig.caBundle'
