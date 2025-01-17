@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: kube-prometheus-stack
       repoURL: https://prometheus-community.github.io/helm-charts
-      targetRevision: 68.0.0
+      targetRevision: 68.2.1
       helm:
         releaseName: kube-prometheus-stack
         valueFiles:
@@ -21,5 +21,6 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
+      prune: true
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
