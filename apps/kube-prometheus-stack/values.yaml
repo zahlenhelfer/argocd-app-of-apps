@@ -14,3 +14,20 @@ grafana:
 #   size: 20Gi
 #   finalizers:
 #     - kubernetes.io/pvc-protection
+prometheus:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - prometheus.zahlenhelfer.duckdns.org
+    path: /
+#prometheus.prometheusSpec.storageSpec
+## Using PersistentVolumeClaim
+##
+#  volumeClaimTemplate:
+#    spec:
+#      storageClassName: gluster
+#      accessModes: ["ReadWriteOnce"]
+#      resources:
+#        requests:
+#          storage: 10Gi
