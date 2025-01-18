@@ -19,7 +19,7 @@ spec:
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: victoria-metrics
+    namespace: monitoring
   syncPolicy:
     automated:
       selfHeal: true
