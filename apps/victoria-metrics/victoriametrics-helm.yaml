@@ -7,14 +7,16 @@ metadata:
     argocd.argoproj.io/sync-wave: '1'
 spec:
   project: default
-  source:
-    chart: victoria-metrics-single
-    repoURL: https://victoriametrics.github.io/helm-charts/
-    targetRevision: 0.17.0
-    helm:
-      releaseName: victoria-metrics-single
-      valueFiles:
-        - values.yaml
+  sources:
+    - chart: victoria-metrics-single
+      repoURL: https://victoriametrics.github.io/helm-charts/
+      targetRevision: 0.13.16
+      helm:
+        releaseName: victoria-metrics-single
+        valueFiles:
+          - $values/apps/victoria-metrics/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: victoria-metrics
@@ -25,19 +27,3 @@ spec:
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
       - Replace=true
-      # https://argo-cd.readthedocs.io/en/stable/user-guide/sync-options/#respect-ignore-difference-configs
-      # argocd must also ignore difference during apply stage
-      # otherwise it ll silently override changes and cause a problem
-      - RespectIgnoreDifferences=true
-  ignoreDifferences:
-    - group: ''
-      kind: Secret
-      name: <fullname>-validation
-      namespace: <k8s-stack-namespace>
-      jsonPointers:
-        - /data
-    - group: admissionregistration.k8s.io
-      kind: ValidatingWebhookConfiguration
-      name: <fullname>-admission
-      jqPathExpressions:
-        - '.webhooks[]?.clientConfig.caBundle'
