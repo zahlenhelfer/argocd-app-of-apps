@@ -10,6 +10,7 @@ controller:
       additionalLabels:
         release: prometheus
       enabled: true
-  podAnnotations:
-    prometheus.io/port: '10254'
-    prometheus.io/scrape: 'true'
+      namespaceSelector: monitoring
+#  podAnnotations:
+#    prometheus.io/port: '10254'
+#    prometheus.io/scrape: 'true'
