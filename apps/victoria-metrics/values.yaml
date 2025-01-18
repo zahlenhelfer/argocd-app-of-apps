@@ -385,7 +385,7 @@ server:
   terminationGracePeriodSeconds: 60
   serviceMonitor:
     # -- Enable deployment of Service Monitor for server component. This is Prometheus operator object
-    enabled: false
+    enabled: true
     # -- Service Monitor labels
     extraLabels: {}
     # -- Service Monitor annotations
