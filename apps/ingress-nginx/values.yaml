@@ -4,3 +4,7 @@ controller:
     default: true
   admissionWebhooks:
     enabled: false
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
