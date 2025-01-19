@@ -4,13 +4,13 @@ controller:
     default: true
   admissionWebhooks:
     enabled: false
-  metrics:
-    enabled: true
-    serviceMonitor:
-      additionalLabels:
-        release: prometheus
-      enabled: true
-      namespace: monitoring
+#  metrics:
+#    enabled: true
+#    serviceMonitor:
+#      additionalLabels:
+#        release: prometheus
+#      enabled: true
+#      namespace: monitoring
 #  podAnnotations:
 #    prometheus.io/port: '10254'
 #    prometheus.io/scrape: 'true'
