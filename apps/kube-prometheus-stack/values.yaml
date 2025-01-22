@@ -2012,7 +2012,7 @@ kubeScheduler:
     ## Requires proper certs (not self-signed) and delegated authentication/authorization checks.
     ## If null or unset, the value is determined dynamically based on target Kubernetes version.
     ##
-    https: false
+    https: true
 
     ## port: Name of the port the metrics will be scraped from
     ##
