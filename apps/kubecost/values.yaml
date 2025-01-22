@@ -7,7 +7,7 @@ opencost:
       hosts:
         - host: opencost.zahlenhelfer.duckdns.org
           paths:
-            - /
+            - '/'
   prometheus:
     internal:
       enabled: true
