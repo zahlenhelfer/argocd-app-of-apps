@@ -10,3 +10,6 @@ opencost:
   metrics:
     serviceMonitor:
       enabled: true
+  prometheus:
+    internal:
+      namespaceName: monitoring
