@@ -10,6 +10,3 @@ controller:
       enabled: true
       additionalLabels:
         release: prometheus
-#  podAnnotations:
-#    prometheus.io/port: '10254'
-#    prometheus.io/scrape: 'true'
