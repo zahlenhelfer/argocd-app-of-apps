@@ -1909,7 +1909,7 @@ kubeEtcd:
     proxyUrl: ''
     scheme: http
     insecureSkipVerify: true
-    serverName: kube-prometheus-stack-kube-etcd
+    serverName: localhost
     caFile: ''
     certFile: ''
     keyFile: ''
