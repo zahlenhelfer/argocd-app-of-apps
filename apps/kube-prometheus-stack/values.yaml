@@ -1864,8 +1864,8 @@ kubeEtcd:
       enabled: false
       ipFamilies: ['IPv6', 'IPv4']
       ipFamilyPolicy: 'PreferDualStack'
-  ##  selector:
-  ##    component: etcd
+    ##selector:
+    ##  component: etcd
 
   ## Configure secure access to the etcd cluster by loading a secret into prometheus and
   ## specifying security configuration below. For example, with a secret named etcd-client-cert
@@ -1919,9 +1919,9 @@ kubeEtcd:
     port: http-metrics
 
     jobLabel: jobLabel
-    selector:
-      matchLabels:
-        component: etcd
+    selector: {}
+    #  matchLabels:
+    #    component: etcd
 
     ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
