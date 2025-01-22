@@ -6,6 +6,8 @@ opencost:
       ingressClassName: nginx
       hosts:
         - host: opencost.zahlenhelfer.duckdns.org
+          paths:
+            - /
   prometheus:
     internal:
       enabled: true
