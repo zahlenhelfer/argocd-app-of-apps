@@ -1909,7 +1909,7 @@ kubeEtcd:
     proxyUrl: ''
     scheme: http
     insecureSkipVerify: true
-    serverName: 127.0.0.1
+    serverName: '127.0.0.1'
     caFile: ''
     certFile: ''
     keyFile: ''
