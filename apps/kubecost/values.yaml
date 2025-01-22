@@ -3,11 +3,9 @@ opencost:
     enabled: true
     ingress:
       enabled: true
-      ingressClassName: 'nginx'
+      ingressClassName: nginx
       hosts:
-        - host: 'opencost.zahlenhelfer.duckdns.org'
-          paths:
-            - /
+        - host: opencost.zahlenhelfer.duckdns.org
   prometheus:
     internal:
       enabled: true
