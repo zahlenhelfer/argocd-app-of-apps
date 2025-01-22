@@ -1908,7 +1908,7 @@ kubeEtcd:
     ##
     proxyUrl: ''
     scheme: http
-    insecureSkipVerify: false
+    insecureSkipVerify: true
     serverName: ''
     caFile: ''
     certFile: ''
