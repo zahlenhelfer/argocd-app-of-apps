@@ -11,7 +11,7 @@ spec:
   sources:
     - chart: opencost
       repoURL: https://opencost.github.io/opencost-helm-chart
-      targetRevision: 1.43.0
+      targetRevision: 1.43.2
       helm:
         releaseName: opencost
         valueFiles:
