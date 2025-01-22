@@ -7,3 +7,6 @@ opencost:
         - host: 'opencost.zahlenhelfer.duckdns.org'
           paths:
             - /
+  metrics:
+    serviceMonitor:
+      enabled: true
