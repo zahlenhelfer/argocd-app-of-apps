@@ -5,19 +5,22 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: popeye
-    repoURL: https://charts.christianhuth.de
-    targetRevision: 2.1.2
-    helm:
-      releaseName: popeye
-      valueFiles:
-        - values.yaml
+  sources:
+    - chart: popeye
+      repoURL: https://charts.christianhuth.de
+      targetRevision: 2.1.5
+      helm:
+        releaseName: popeye
+        valueFiles:
+          - $values/apps/popeye/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: popeye
   syncPolicy:
     automated:
       selfHeal: true
+      prune: true
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist
