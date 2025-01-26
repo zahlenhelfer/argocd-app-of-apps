@@ -8,7 +8,7 @@ admissionController:
   metering:
     disabled: false
 
-grafana:
+grafana: # you need grafana-crd, so we use cm in a separate step
   enabled: false
   grafanaDashboard:
     create: false
