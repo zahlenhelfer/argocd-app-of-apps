@@ -7,14 +7,16 @@ metadata:
     argocd.argoproj.io/sync-wave: '1'
 spec:
   project: default
-  source:
-    chart: kyverno
-    repoURL: https://kyverno.github.io/kyverno/
-    targetRevision: 3.3.4
-    helm:
-      releaseName: kyverno
-      valueFiles:
-        - values.yaml
+  sources:
+    - chart: kyverno
+      repoURL: https://kyverno.github.io/kyverno/
+      targetRevision: 3.3.4
+      helm:
+        releaseName: opencost
+        valueFiles:
+          - $values/apps/kyverno/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kyverno
