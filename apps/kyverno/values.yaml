@@ -1,3 +1,14 @@
 crds:
   migration:
     enabled: false
+
+admissionController:
+  serviceMonitor:
+    enabled: true
+  metering:
+    disabled: false
+
+grafana:
+  enabled: true
+  grafanaDashboard:
+    create: true
