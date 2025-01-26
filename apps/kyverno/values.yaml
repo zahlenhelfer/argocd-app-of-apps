@@ -9,6 +9,6 @@ admissionController:
     disabled: false
 
 grafana:
-  enabled: true
+  enabled: false
   grafanaDashboard:
-    create: true
+    create: false
