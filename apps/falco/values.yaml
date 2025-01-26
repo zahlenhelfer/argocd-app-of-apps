@@ -1,8 +1,10 @@
 metrics:
   enabled: true
+  interval: 1m
 
 serviceMonitor:
   create: true
+  interval: 5m
 
 grafana:
   dashboards:
