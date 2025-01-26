@@ -8,7 +8,20 @@ grafana:
   dashboards:
     enabled: true
 
+collectors:
+  docker:
+    enabled: false
+  crio:
+    enabled: false
+  kubernetes:
+    enabled: true
+
 falco:
+  driver:
+    enabled: true
+    kind: ebpf
+    ebpf:
+      leastPrivileged: true
   webserver:
     prometheus_metrics_enabled: true
   scc:
