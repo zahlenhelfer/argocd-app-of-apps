@@ -3,6 +3,5 @@ prometheus:
   servicemonitor:
     enabled: true
 
-global:
-  leaderElection:
-    namespace: cert-manager
+startupapicheck:
+  enabled: false
