@@ -1,14 +1,11 @@
-apiVersion: grafana.integreatly.org/v1beta1
-kind: GrafanaDashboard
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: NGINX-Ingress-controller
-  namespace: monitoring
-spec:
-  resyncPeriod: 30s
-  instanceSelector:
-    matchLabels:
-      dashboards: 'NGINX Ingress controller'
-  json: >
+  labels:
+    grafana_dashboard: '1'
+  name: nginx-ingress-dashboard-configmap
+data:
+  ingress-nginx-dashboard.json: |-
     {
       "__inputs": [
         {
