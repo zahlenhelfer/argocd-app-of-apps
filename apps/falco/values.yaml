@@ -16,7 +16,7 @@ collectors:
   crio:
     enabled: false
   kubernetes:
-    enabled: false
+    enabled: true
 
 falco:
   driver:
