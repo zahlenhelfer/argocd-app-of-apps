@@ -5,19 +5,22 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: falco
-    repoURL: https://falcosecurity.github.io/charts
-    targetRevision: 4.17.0
-    helm:
-      releaseName: falco
-      valueFiles:
-        - values.yaml
+  sources:
+    - chart: falco
+      repoURL: https://falcosecurity.github.io/charts
+      targetRevision: 4.17.2
+      helm:
+        releaseName: falco
+        valueFiles:
+          - $values/apps/falco/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: falco
   syncPolicy:
     automated:
       selfHeal: true
+      prune: true
     syncOptions:
       - CreateNamespace=true # Automatically creates namespace if it doesn't exist

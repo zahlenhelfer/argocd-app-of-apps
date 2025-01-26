@@ -1,0 +1,10 @@
+falco:
+  webserver:
+    prometheus_metrics_enabled: true
+
+serviceMonitor:
+  create: true
+
+grafana:
+  dashboards:
+    enabled: true
