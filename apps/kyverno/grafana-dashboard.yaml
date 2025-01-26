@@ -5,7 +5,7 @@ metadata:
     grafana_dashboard: '1'
   name: kyverno-dashboard-configmap
 data:
-  ingress-nginx-dashboard.json: |-
+  kyverno-dashboard.json: |-
     {
         "annotations": {
           "list": [
