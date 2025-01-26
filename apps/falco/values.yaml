@@ -14,12 +14,12 @@ collectors:
   crio:
     enabled: false
   kubernetes:
-    enabled: true
+    enabled: false
 
 falco:
   driver:
     enabled: true
-    kind: ebpf
+    kind: modern_ebpf
     ebpf:
       leastPrivileged: true
   webserver:
