@@ -14,7 +14,7 @@ spec:
       helm:
         releaseName: cert-manager
         valueFiles:
-          - $values/apps/cert-manager/values.yaml
+          - $values/apps/certmanager/values.yaml
     - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
       ref: values
   destination:
