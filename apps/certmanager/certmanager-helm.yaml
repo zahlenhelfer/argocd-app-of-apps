@@ -7,14 +7,16 @@ metadata:
     argocd.argoproj.io/sync-wave: '1'
 spec:
   project: default
-  source:
-    chart: cert-manager
-    repoURL: https://charts.jetstack.io
-    targetRevision: 1.16.2
-    helm:
-      releaseName: cert-manager
-      valueFiles:
-        - values.yaml
+  sources:
+    - chart: cert-manager
+      repoURL: https://charts.jetstack.io
+      targetRevision: 1.16.2
+      helm:
+        releaseName: cert-manager
+        valueFiles:
+          - $values/apps/cert-manager/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
