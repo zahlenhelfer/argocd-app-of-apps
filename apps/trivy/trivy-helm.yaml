@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trivy
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - chart: trivy-operator
+      repoURL: https://aquasecurity.github.io/helm-charts/
+      targetRevision: 0.23.0
+      helm:
+        releaseName: trivy-operator
+        valueFiles:
+          - $values/apps/trivy/values.yaml
+    - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true # Automatically creates namespace if it doesn't exist
