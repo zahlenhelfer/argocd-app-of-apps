@@ -3,10 +3,12 @@ kind: Application
 metadata:
   name: csi-driver-nfs
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
     namespace: kube-system
   sources:
     - chart: csi-driver-nfs
