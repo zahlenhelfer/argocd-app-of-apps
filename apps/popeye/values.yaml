@@ -30,4 +30,4 @@ popeye:
 
   grafana:
     enabled: true
-    datasource: "victoriametrics"
+    datasource: "prometheus"
