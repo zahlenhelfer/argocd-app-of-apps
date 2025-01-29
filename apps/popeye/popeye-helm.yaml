@@ -7,7 +7,7 @@ spec:
   project: default
   sources:
     - chart: popeye
-      repoURL: oci://ghcr.io/deb4sh/helm-popeye
+      repoURL: ghcr.io/deb4sh/helm-popeye/popeye
       targetRevision: 0.0.0-e7609a
       helm:
         releaseName: popeye
