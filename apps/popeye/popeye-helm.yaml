@@ -7,8 +7,8 @@ spec:
   project: default
   sources:
     - chart: popeye
-      repoURL: https://charts.christianhuth.de
-      targetRevision: 2.1.5
+      repoURL: oci://ghcr.io/deb4sh/helm-popeye
+      targetRevision: 1.0.0
       helm:
         releaseName: popeye
         valueFiles:
@@ -16,7 +16,7 @@ spec:
     - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
       ref: values
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
     namespace: popeye
   syncPolicy:
     automated:
