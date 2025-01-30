@@ -9,7 +9,7 @@ spec:
     - chart: otterize-kubernetes
       repoURL: https://helm.otterize.com
       helm:
-        releaseName: trivy-operator
+        releaseName: otterize
         valueFiles:
           - $values/apps/otterize/values.yaml
     - repoURL: https://github.com/zahlenhelfer/argocd-app-of-apps.git
